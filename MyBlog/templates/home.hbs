@@ -1,0 +1,49 @@
+{{>header}}
+{{#if isAuthenticated}}
+<section id="home-logged">
+    <section class="first-section">
+        <section class="background-container">
+            <form action="/create" method="POST">
+                <h1>Create Post</h1>
+                <label for="title">Title</label>
+                <input type="text" name="title">
+                <label for="category">Category</label>
+                <input type="text" name="category">
+                <label for="content">Content</label>
+                <textarea name="content" cols="30" rows="7"></textarea>
+                <button>Submit</button>
+            </form>
+        </section>
+    </section>
+    <section class="second-section">
+        <h3>Articles</h3>
+        <hr>
+        <div class="posts-row">
+            {{#each posts}}
+            <article class="post">
+                <h1>{{title}}</h1>
+                <h2><span>{{category}}</span></h2>
+                <p>{{content}}</p>
+                {{#if isAuthor}}
+                <a href="#/delete/{{id}}" id="delete-button">Delete</a>
+                <a href="#/edit/{{id}}" id="edit-button">Edit</a>
+                {{/if}}
+                <a href="#/details/{{id}}" id="details-button">Details</a>
+            </article>
+            {{/each}}
+        </div>
+
+
+    </section>
+</section>
+{{else}}
+<section id="home">
+    <section class="background-container">
+        <h1>Welcome to Ati's blog!</h1>
+        <div class="auth-buttons">
+            <a href="#/login">Login</a>
+            <a href="#/register">Register</a>
+        </div>
+    </section>
+</section>
+{{/if}}

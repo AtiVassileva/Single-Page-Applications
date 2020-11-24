@@ -1,0 +1,36 @@
+<main id="home-logged">
+    <section class="first-section">
+        <section class="background-container">
+            <form action="/edit/{{post.id}}" method="POST" class="edit-form">
+                <h1>Edit Post</h1>
+                <label for="title">Title</label>
+                <input type="text" name="title" value="{{post.title}}">
+                <label for="category">Category</label>
+                <input type="text" name="category" value="{{post.category}}">
+                <label for="content">Content</label>
+                <textarea name="content" cols="30" rows="7">{{post.content}}</textarea>
+                <button>Edit</button>
+                <a href="" id="close-btn"><img src="../../images/close.png"></a>
+            </form>
+        </section>
+    </section>
+    <section class="second-section">
+        <h3>Posts</h3>
+        <hr>
+        <div class="posts-row">
+            {{#each posts}}
+            <article class="post">
+                <h1>{{title}}</h1>
+                <h2><span>{{category}}</span></h2>
+                <p>{{content}}</p>
+                {{#if isAuthor}}
+                <a href="#/delete/{{id}}" id="delete-button">Delete</a>
+                <a href="#/edit/{{id}}" id="edit-button">Edit</a>
+
+                <a href="#/details/{{id}}" id="details-button">Details</a>
+                {{/if}}
+            </article>
+            {{/each}}
+        </div>
+    </section>
+</main>
