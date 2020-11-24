@@ -1,0 +1,73 @@
+{{>header}}
+
+{{#if loggedIn}}
+<div class="content">
+    <section class="js">
+        <h2>JavaScript</h2>
+        <div class="articles">
+            {{#if areJsArticles}}
+            {{#each jsArticles}}
+            <article>
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <a href="#/details/{{id}}" class="btn details-btn">Details</a>
+            </article>
+            {{/each}}
+            {{else}}
+            <h3 class="no-articles">No articles yet</h3>
+            {{/if}}
+        </div>
+
+    </section>
+    <section class="c-sharp">
+        <h2>C#</h2>
+        {{#if areCSharpArticles}}
+        <div class="articles">
+            {{#each cSharpArticles}}
+            <article>
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <a href="#/details/{{id}}" class="btn details-btn">Details</a>
+            </article>
+            {{/each}}
+        </div>
+        {{else}}
+        <h3 class="no-articles">No articles yet</h3>
+        {{/if}}
+    </section>
+    <section class="js">
+        <h2>Java</h2>
+        <div class="articles">
+            {{#if areJavaArticles}}
+            {{#each javaArticles}}
+            <article>
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <a href="#/details/{{id}}" class="btn details-btn">Details</a>
+            </article>
+            {{/each}}
+            {{else}}
+            <h3 class="no-articles">No articles yet</h3>
+            {{/if}}
+        </div>
+
+    </section>
+    <section class="js">
+        <h2>Python</h2>
+        {{#if arePythonArticles}}
+        <div class="articles">
+            {{#each pythonArticles}}
+            <article>
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <a href="#/details/{{id}}" class="btn details-btn">Details</a>
+            </article>
+            {{/each}}
+        </div>
+        {{else}}
+        <h3 class="no-articles">No articles yet</h3>
+        {{/if}}
+    </section>
+</div>
+{{/if}}
+{{>footer}}
