@@ -1,0 +1,17 @@
+{{>navigation}}
+<div class="profile home-text col-md-6 text-center col-lg">
+    <img class="profile-img" src="./images/user.png" />
+    <div class="profile-info">
+        <p>Email: <small>{{email}}</small></p>
+        {{#if areIdeas}}
+        <p class="infoType">Has {{userIdeas.length}} ideas =)</p>
+        {{#each userIdeas}}
+        <p>{{title}}</p>
+        {{/each}}
+        {{else}}
+        <p>No ideas yet</p>
+        {{/if}}
+    </div>
+</div>
+</div>
+{{>footer}}
