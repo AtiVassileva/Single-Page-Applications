@@ -1,0 +1,19 @@
+{{>navigation}}
+<section id="mySongsView">
+    <div class="background-spotify">
+        <div class="song-container">
+            <h1>My Songs</h1>
+            {{#each userSongs}}
+            <div class="song">
+                <h5>Title: {{title}}</h5>
+                <h5>Artist: {{artist}}</h5>
+                <img class="cover" src="{{imageURL}}" />
+                <p>Likes: {{likes}}; Listened {{listened}} times</p>
+                <a href="#/remove/{{id}}"><button type="button" class="btn btn-danger mt-4">Remove</button></a>
+                <a href="#/listen/{{id}}"><button type="button" class="btn btn-success mt-4">Listen</button></a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+{{>footer}}
