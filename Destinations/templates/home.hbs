@@ -1,0 +1,20 @@
+{{>header}}
+<section id="viewCatalog" class="background-img">
+    {{#if isLoggedIn}}
+    <div class="added-destinations">
+        {{#each destinations}}
+        <a href="#/details/{{id}}" class="added-destination">
+            <img src="{{imgUrl}}"
+                alt="" class="picture-added-destination">
+            <h3>{{destination}}</h3>
+            <span>to {{city}} </span><span>{{departureDate}}</span>
+        </a>
+        {{/each}}
+    </div>
+    {{else}}
+    <div class="guest">
+        No destinations possible! Please sign in...
+    </div>
+    {{/if}}
+</section>
+{{>footer}}
